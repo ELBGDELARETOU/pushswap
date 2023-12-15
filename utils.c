@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:39:39 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/13 14:41:44 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:42:44 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_atoi(const char *str)
 
 	signe = 1;
 	atoi = 0;
+	
 	while ((*str == 32) || (*str >= 9 && *str <= 13))
 		str++;
 	while (*str == '-' || *str == '+')
