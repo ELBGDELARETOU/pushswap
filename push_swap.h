@@ -6,6 +6,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -14,17 +15,17 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list				*ft_lstlast(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-int					ft_isdigit(long int c);
-int					ft_atoi(const char *str);
-int					ft_check_int(int argc, char **argv);
+long				ft_atoi(char *str);
 int					ft_check(int argc, char **argv);
-void				ft_stock(int argc, char **argv);
-void				ft_stock(int argc, char **argv);
-t_list				*ft_lstnew(void *content);
 int					ft_check_doubles(int argc, char **argv);
 int					ft_isalpha(char *str);
 int					ft_check_letters(int argc, char **argv);
+char				**ft_split(char const *str, char c);
+static char			*ft_get_next_words(int *index, char const *str, char c);
+static int			ft_count_words(char const *str, char c);
+static int			ft_char_is_in_str(char const *str, char c);
+static void			my_free_all(char **res, int len);
+int					tlen(char **str);
+int					ft_isaout(char *str);
 
 #endif

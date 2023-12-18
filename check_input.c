@@ -6,60 +6,21 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:39:54 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/15 18:34:53 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:13:33 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_isalpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-long	ft_atoi(const char *str)
-{
-	long	atoi;
-	long	signe;
-
-	signe = 1;
-	atoi = 0;
-	while ((*str == 32) || (*str >= 9 && *str <= 13))
-		str++;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			signe = signe * -1;
-		str++;
-		if (*str == '-' || *str == '+')
-			return (0);
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		atoi = (atoi * 10 + (*str - '0'));
-		str++;
-	}
-	return (atoi * signe);
-}
 
 int	ft_check_doubles(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = i + 1;
+	if (ft_isaout(argv[i]))
+		i++;
 	while (i < argc)
 	{
 		while (j < argc)
@@ -77,10 +38,10 @@ int	ft_check_doubles(int argc, char **argv)
 int	ft_check_letters(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	j = 0;
+	i = 0;
+	if (ft_isaout(argv[i]))
+		i++;
 	while (argc > i)
 	{
 		if (!(ft_atoi(argv[i]) >= -2147483648
@@ -95,10 +56,23 @@ int	ft_check_letters(int argc, char **argv)
 
 int	ft_check(int argc, char **argv)
 {
+	char	**r;
+	int		len;
+
 	if (argc == 1)
 	{
 		write(2, "Error\n", 6);
 		return (0);
+	}
+	if (argc == 2)
+	{
+		r = ft_split(argv[1], ' ');
+		if (!ft_check_doubles(tlen(r), r) || !ft_check_letters(tlen(r), r))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		return (1);
 	}
 	else if (!ft_check_doubles(argc, argv) || !ft_check_letters(argc, argv))
 	{
@@ -111,6 +85,8 @@ int	ft_check(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	char **r;
+	int i = 0;
 	if (argc == 10000)
 		return (0);
 	ft_check(argc, argv);
