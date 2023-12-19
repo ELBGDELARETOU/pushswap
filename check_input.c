@@ -6,18 +6,20 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:39:54 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/18 16:13:33 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:14:00 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_doubles(int argc, char **argv)
+int	ft_check_doubles(int argc, char **argv, int check)
 {
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
+	if (check == 1)
+		i = 0;
 	j = i + 1;
 	if (ft_isaout(argv[i]))
 		i++;
@@ -35,17 +37,18 @@ int	ft_check_doubles(int argc, char **argv)
 	return (1);
 }
 
-int	ft_check_letters(int argc, char **argv)
+int	ft_check_letters(int argc, char **argv, int check)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
+	if (check == 1)
+		i = 0;
 	if (ft_isaout(argv[i]))
 		i++;
 	while (argc > i)
 	{
-		if (!(ft_atoi(argv[i]) >= -2147483648
-				&& ft_atoi(argv[i]) <= 2147483647))
+		if (!(ft_atoi(argv[i]) > -2147483648 && ft_atoi(argv[i]) < 2147483647))
 			return (0);
 		else if (!ft_isalpha(argv[i]))
 			return (0);
@@ -57,7 +60,6 @@ int	ft_check_letters(int argc, char **argv)
 int	ft_check(int argc, char **argv)
 {
 	char	**r;
-	int		len;
 
 	if (argc == 1)
 	{
@@ -67,14 +69,15 @@ int	ft_check(int argc, char **argv)
 	if (argc == 2)
 	{
 		r = ft_split(argv[1], ' ');
-		if (!ft_check_doubles(tlen(r), r) || !ft_check_letters(tlen(r), r))
+		if (!ft_check_doubles(tl(r), r, 1) || !ft_check_letters(tl(r), r, 1))
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
 		return (1);
 	}
-	else if (!ft_check_doubles(argc, argv) || !ft_check_letters(argc, argv))
+	else if (!ft_check_doubles(argc, argv, 3) || !ft_check_letters(argc, argv,
+			3))
 	{
 		write(2, "Error\n", 6);
 		return (0);

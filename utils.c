@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:39:39 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/18 16:13:50 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:13:55 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_isaout(char *str)
 	return (0);
 }
 
-int	tlen(char **str)
+int	tl(char **str)
 {
 	int	i;
 
