@@ -6,18 +6,17 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:11:45 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/18 16:12:09 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:26:46 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	tlen(char **str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

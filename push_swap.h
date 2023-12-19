@@ -9,9 +9,12 @@
 # include <string.h>
 # include <unistd.h>
 
+# include "libft/libft.h"
+
 typedef struct s_list
 {
 	int				content;
+	int				position;
 	struct s_list	*next;
 }					t_list;
 
@@ -27,5 +30,10 @@ static int			ft_char_is_in_str(char const *str, char c);
 static void			my_free_all(char **res, int len);
 int					tl(char **str);
 int					ft_isaout(char *str);
+void				ft_stock(int argc, char **argv, t_list **list);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+t_list				*ft_lstlast(t_list *lst);
+void				swap(t_list **a);
+void				push(t_list **a, t_list **b);
 
 #endif
