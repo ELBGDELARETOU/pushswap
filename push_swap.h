@@ -9,13 +9,12 @@
 # include <string.h>
 # include <unistd.h>
 
-# include "libft/libft.h"
-
 typedef struct s_list
 {
 	int				content;
-	int				position;
 	struct s_list	*next;
+	struct s_list	*prev;
+
 }					t_list;
 
 long				ft_atoi(char *str);
@@ -33,7 +32,18 @@ int					ft_isaout(char *str);
 void				ft_stock(int argc, char **argv, t_list **list);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
-void				swap(t_list **a);
-void				push(t_list **a, t_list **b);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+
+void				reverse_rotate_a(t_list **lst);
+void				reverse_rotate_b(t_list **lst);
+
+void				rotate_a(t_list **lst);
+void				rotate_b(t_list **lst);
+
+void				swap_a(t_list **a);
+void				swap_b(t_list **a);
+
+void				push_a(t_list **a, t_list **b);
+void				push_b(t_list **a, t_list **b);
 
 #endif

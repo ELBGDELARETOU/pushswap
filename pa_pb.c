@@ -6,25 +6,27 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:53 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/19 18:59:36 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:41:47 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_list **dest, t_list **src)
+void	push_a(t_list **a, t_list **b)
 {
-	t_list *node;
 
-	if (!*src)
+	if (!*a)
 		return ;
-	// node = malloc(sizeof(t_list));
-    // if(!node)
-    //     return ;
-    ft_lstadd_front(dest, *src);
-    *src = (*src)->next;
-	// node->content = (*a)->content;
-    // node->next = *b;
-    // *b = node;
-    // *a = (*a)->next;
+	*b = *a;
+	*a = (*a)->next;
+    (*b)->next = NULL;
+}
+void	push_b(t_list **a, t_list **b)
+{
+
+	if (!*a)
+		return ;
+	*b = *a;
+	*a = (*a)->next;
+    (*b)->next = NULL;
 }

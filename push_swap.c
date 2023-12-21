@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/19 18:55:13 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:50:21 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,28 @@ void	ft_stock(int argc, char **argv, t_list **list)
 
 int	main(int argc, char **argv)
 {
-	t_list *a;
-	t_list *b;
+	t_list	*a;
+	t_list	*b;
+
+	b = NULL;
 	if (argc == 1)
 		return (0);
 	ft_stock(argc, argv, &a);
-	push(&a, &b);
-	while (a || b)
+	
+	// swap(&a);
+	push_a(&a, &b);
+	// rev_rotate(&a);
+	rotate_a(&a);
+	printf("a\n");
+	while (a)
 	{
 		printf("%d\n", a->content);
-		printf("%d\n", b->content);
 		a = a->next;
+	}
+	printf("b\n");
+	while (b)
+	{
+		printf("%d", b->content);
 		b = b->next;
 	}
-}
+ }
