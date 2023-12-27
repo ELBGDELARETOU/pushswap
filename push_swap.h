@@ -11,6 +11,8 @@
 
 typedef struct s_list
 {
+	int				position;
+	int				target;
 	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -33,6 +35,12 @@ void				ft_stock(int argc, char **argv, t_list **list);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
+int					check_end(t_list *a, t_list *b);
+void				ft_algo2(t_list **a, t_list **b);
+void				ft_target(t_list *a, t_list **b);
+int					ft_check(int argc, char **argv);
+int					lst_size(t_list *a);
+void				ft_algo3(t_list **a, t_list **b);
 
 void				reverse_rotate_a(t_list **lst);
 void				reverse_rotate_b(t_list **lst);

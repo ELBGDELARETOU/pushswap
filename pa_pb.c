@@ -6,27 +6,39 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:53 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/21 18:41:47 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:20:50 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_list **a, t_list **b)
-{
-
-	if (!*a)
-		return ;
-	*b = *a;
-	*a = (*a)->next;
-    (*b)->next = NULL;
-}
 void	push_b(t_list **a, t_list **b)
 {
+	t_list	*tmp;
 
 	if (!*a)
 		return ;
-	*b = *a;
+	tmp = malloc(sizeof(t_list));
+	if (!tmp)
+		return ;
+	write(1, "pa\n", 3);
+	tmp->content = (*a)->content;
+	tmp->next = *b;
 	*a = (*a)->next;
-    (*b)->next = NULL;
+	(*b) = tmp;
+}
+void	push_a(t_list **a, t_list **b)
+{
+	t_list	*tmp;
+
+	if (!*a)
+		return ;
+	tmp = malloc(sizeof(t_list));
+	if (!tmp)
+		return ;
+	write(1, "pa\n", 3);
+	tmp->content = (*b)->content;
+	tmp->next = *a;
+	*b = (*b)->next;
+	(*a) = tmp;
 }

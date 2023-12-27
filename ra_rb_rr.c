@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:45 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/21 18:49:27 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:27:58 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	rotate_b(t_list **lst)
 
 	if (!*lst || !(*lst)->next)
 		return ;
+	write(1, "rb\n", 3);
 	stock = (*lst)->next;
 	tmp = (*lst)->next;
 	while (tmp->next)
@@ -44,16 +45,17 @@ void	rotate_b(t_list **lst)
 	*lst = stock;
 }
 
-void rotate_a(t_list **lst)
+void	rotate_a(t_list **lst)
 {
-    if (!*lst || !(*lst)->next)
-        return;
+	t_list	*current;
 
-    t_list *current = *lst;
-
-    while (current->next != NULL)
-        current = current->next;
-    current->next = *lst;
-    *lst = (*lst)->next;
-    current->next->next = NULL;
+	if (!*lst || !(*lst)->next)
+		return ;
+	write(1, "rb\n", 3);
+	current = *lst;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = *lst;
+	*lst = (*lst)->next;
+	current->next->next = NULL;
 }

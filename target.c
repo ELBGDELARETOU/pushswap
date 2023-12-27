@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb_sa_ss.c                                         :+:      :+:    :+:   */
+/*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 15:16:40 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/26 14:29:28 by anaouali         ###   ########.fr       */
+/*   Created: 2023/12/27 14:45:31 by anaouali          #+#    #+#             */
+/*   Updated: 2023/12/27 15:04:08 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_list **a)
+void	ft_target(t_list *a, t_list **b)
 {
-	int	tmp;
+	int c;
+    int tmp;
 
-	if (*a != NULL && (*a)->next != NULL)
+	c = 0;
+	while ((*b)->next)
 	{
-		tmp = (*a)->content;
-		(*a)->content = (*a)->next->content;
-		(*a)->next->content = tmp;
+		while (a->next)
+		{
+			tmp = (*b)->content - a->content;
+			if (tmp < ((*b)->content) - a->content)
+				tmp = (*b)->content - a->content;
+            a = a->next;
+		}
+		tmp = (*b)->target;
+        tmp = 0;
+		(*b) = (*b)->next;
 	}
-	write(1, "sa\n", 3);
-	return ;
-}
-void	swap_b(t_list **a)
-{
-	int	tmp;
-
-	if (*a != NULL && (*a)->next != NULL)
-	{
-		tmp = (*a)->content;
-		(*a)->content = (*a)->next->content;
-		(*a)->next->content = tmp;
-	}
-	write(1, "sb\n", 3);
-	return ;
 }

@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb_sa_ss.c                                         :+:      :+:    :+:   */
+/*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 15:16:40 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/26 14:29:28 by anaouali         ###   ########.fr       */
+/*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
+/*   Updated: 2023/12/27 18:20:23 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_list **a)
+void	ft_algo2(t_list **a, t_list **b)
 {
-	int	tmp;
-
-	if (*a != NULL && (*a)->next != NULL)
+	while (!check_end(*a, *b))
 	{
-		tmp = (*a)->content;
-		(*a)->content = (*a)->next->content;
-		(*a)->next->content = tmp;
+		if ((*a)->content > (*a)->next->content)
+			rotate_a(a);
 	}
-	write(1, "sa\n", 3);
 	return ;
 }
-void	swap_b(t_list **a)
-{
-	int	tmp;
 
-	if (*a != NULL && (*a)->next != NULL)
-	{
-		tmp = (*a)->content;
-		(*a)->content = (*a)->next->content;
-		(*a)->next->content = tmp;
-	}
-	write(1, "sb\n", 3);
+void	ft_algo3(t_list **a, t_list **b)
+{
+	while (lst_size(*a) >= 3)
+		push_b(a, b);
 	return ;
 }
