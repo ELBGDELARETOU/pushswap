@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/06 14:38:17 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/15 16:59:37 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,43 +43,42 @@ void	ft_stock(int argc, char **argv, t_list **list)
 
 int	main(int argc, char **argv)
 {
-	t_list	*a;
-	t_list	*b;
+	t_list *a;
+	t_list *b;
 
 	if (argc == 1)
 		return (0);
 	if (!ft_check(argc, argv))
-		return 0;
+		return (0);
 	ft_stock(argc, argv, &a);
 	algopswp(&a, &b);
-	set_target(a, b);
-	printf("a                                       "); 
-	printf("b\n------------------------------------------\n");
-	while (a || b)
+	init(a, b);
+	printf ("-------------------------------------\n");
+	printf("a\n");
+	printf ("-------------------------------------\n");
+	while (a)
 	{
 		if (a)
 		{
 			printf("content : %d ", a->content);
-			printf("medaine : %d ", a->under_mediane);  
+			printf("mediane : %d ", a->under_mediane);
 			printf("position : %d", a->position);
-			printf("target : %d", a->target->content);
+			printf("\n");
 			a = a->next;
-			if (!a && b)
-				{
-					printf("%d ", b->content);
-					printf("%d\n", b->under_mediane);
-					printf(" target %d\n", b->target->content);
-				}
-			if (!b)
-				printf("\n");
 		}
-		if (!a)
-			printf("   ");
+	}
+	printf("b\n");
+	printf ("-------------------------------------\n");
+	while (b)
+	{
 		if (b)
 		{
-			printf("%d\n", b->content);
-			// printf(": target %d\n", b->target);
+			printf("content : %d ", b->content);
+			printf("mediane : %d ", b->under_mediane);
+			printf("position : %d ", b->position);
+			printf("target : %d", b->target);
 			b = b->next;
+			printf("\n");
 		}
 	}
 }

@@ -3,30 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:45 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/30 12:50:04 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/15 12:41:02 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	rotate_a(t_list **lst)
-// {
-// 	t_list	*stock;
-// 	t_list	*tmp;
-
-// 	if (!*lst || !(*lst)->next)
-// 		return ;
-// 	stock = (*lst)->next;
-// 	tmp = (*lst)->next;
-// 	while (tmp->next)
-// 		tmp = tmp->next;
-// 	tmp->next = *lst;
-// 	(*lst)->next = NULL;
-// 	*lst = stock;
-// }
 
 void	rotate_b(t_list **lst)
 {
