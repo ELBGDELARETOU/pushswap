@@ -12,8 +12,11 @@
 typedef struct s_list
 {
 	int				position;
-	int				target;
 	int				content;
+	int				under_mediane;
+	int				price;
+	
+	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
 
@@ -40,7 +43,13 @@ void				ft_algo2(t_list **a, t_list **b);
 void				ft_target(t_list *a, t_list **b);
 int					ft_check(int argc, char **argv);
 int					lst_size(t_list *a);
-void				ft_algo3(t_list **a, t_list **b);
+void				ft_algo3(t_list **a);
+int					isthebiggest(t_list *a);
+void     			set_position(t_list *a);
+void 				set_target(t_list *a, t_list *b);
+int					isthesmallest(t_list *a);
+void 				algopswp(t_list **a, t_list **b);
+
 
 void				reverse_rotate_a(t_list **lst);
 void				reverse_rotate_b(t_list **lst);

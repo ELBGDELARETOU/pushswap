@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/27 18:20:23 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:22:52 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,19 @@ void	ft_algo2(t_list **a, t_list **b)
 	}
 	return ;
 }
+void	ft_algo3(t_list **a)
+{
+	if ((*a)->content == isthebiggest(*a))
+		rotate_a(a);
+	else if ((*a)->next->content == isthebiggest(*a))
+		reverse_rotate_a(a);
+	if ((*a)->content > (*a)->next->content)
+		swap_a(a);
+}
 
-void	ft_algo3(t_list **a, t_list **b)
+void algopswp(t_list **a, t_list **b)
 {
 	while (lst_size(*a) >= 3)
-		push_b(a, b);
-	return ;
+			push_b(a, b);
+	ft_algo3(a);
 }

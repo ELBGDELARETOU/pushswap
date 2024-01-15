@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:11:45 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/27 18:17:36 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/06 12:26:57 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,34 @@ int	lst_size(t_list *a)
 		a = a->next;
 	}
 	return (i);
+}
+
+int	isthebiggest(t_list *a)
+{
+	int c;
+
+	c = a->content;
+	while (a->next)
+	{
+		if (c < a->next->content)
+			c = a->next->content;
+		else
+			a = a->next;
+	}
+	return c;
+}
+
+int		isthesmallest(t_list *a)
+{
+	int c;
+
+	c = a->content;
+	while (a->next)
+	{
+		if (c > a->next->content)
+			c = a->next->content;
+		else
+			a = a->next;
+	}
+	return c;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:45 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/26 14:27:58 by anaouali         ###   ########.fr       */
+/*   Updated: 2023/12/30 12:50:04 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rotate_a(t_list **lst)
 
 	if (!*lst || !(*lst)->next)
 		return ;
-	write(1, "rb\n", 3);
+	write(1, "ra\n", 3);
 	current = *lst;
 	while (current->next != NULL)
 		current = current->next;

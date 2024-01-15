@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/27 18:36:55 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:38:17 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,28 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	// ft_check(argc, argv);
+	if (!ft_check(argc, argv))
+		return 0;
 	ft_stock(argc, argv, &a);
-	// ft_algo(&a, &b);
-	// swap_a(&a);
-	// push_a(&a, &b);
-	// printf("%d ", b->content);
-	// rotate_a(&a);
-	// printf ("%d", check_end(a, b));
-	ft_algo3(&a, &b);
-	printf("a  ");
-	printf("b\n----\n");
+	algopswp(&a, &b);
+	set_target(a, b);
+	printf("a                                       "); 
+	printf("b\n------------------------------------------\n");
 	while (a || b)
 	{
 		if (a)
 		{
-			printf("%d  ", a->content);
+			printf("content : %d ", a->content);
+			printf("medaine : %d ", a->under_mediane);  
+			printf("position : %d", a->position);
+			printf("target : %d", a->target->content);
 			a = a->next;
 			if (!a && b)
-				printf("%d\n", b->content);
+				{
+					printf("%d ", b->content);
+					printf("%d\n", b->under_mediane);
+					printf(" target %d\n", b->target->content);
+				}
 			if (!b)
 				printf("\n");
 		}
