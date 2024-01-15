@@ -44,14 +44,13 @@ void	set_target(t_list *a, t_list *b)
 {
 	t_list	*current_b;
 
-	current_b = b;
 	while (b)
 	{
         current_b = b;
         b->target = INT_MAX;
 		while (a)
 		{
-            if (a->content > current_b->content && a->content < current_b->content  )
+            if (a->content > current_b->content && a->content < current_b->target)
                 current_b->target = a->content;
 			a = a->next;
 		}
