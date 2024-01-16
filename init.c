@@ -21,48 +21,54 @@ void	set_position(t_list *a)
 	}
 }
 
-// void set_target(t_list *a, t_list *b)
-// {
-//     t_list  *target;
-//     t_list  *current_a;
-
-//     cuerrent_a = a;
-//     while (b)
-//     {
-//         while (a)
-//         {
-//             if (b->content > current_a->content && current_a->content)
-//                 b->target->content = current_a->content;
-//             if (b->content > current_a->content && )
-//                 ;
-//         }
-//         a = a->next
-//     }
-// }
-
 void	set_target(t_list *a, t_list *b)
 {
 	t_list	*current_b;
+	t_list	*current_a;
 
 	while (b)
 	{
         current_b = b;
+		current_a = a;
         b->target = INT_MAX;
-		while (a)
+		while (current_a)
 		{
-            if (a->content > current_b->content && a->content < current_b->target)
-                current_b->target = a->content;
-			a = a->next;
+            if (current_a->content > current_b->content && current_a->content < current_b->target)
+                current_b->target = current_a->content;
+			current_a = current_a->next;
 		}
+		b = b->next;
+		if (current_a)
+			a = a->next;
+	}
+}
+
+void set_price(t_list *a, t_list *b)
+{
+	long int i;
+	long int len_b;
+	
+	len_b = lst_size(b);
+	i = 0;
+	while (b)
+	{
+		if (b->under_mediane == 1)
+			b->price = (i++);
+		if (b->under_mediane == 0)
+			b->price = (--i);
 		b = b->next;
 	}
 }
 
+void set_cheapest(t_list *b)
+{
+	 
+}
 void	init(t_list *a, t_list *b)
 {
 	set_position(a);
 	set_position(b);
 	set_target(a, b);
-	// set_price(a, b);
-	// set_cheapest(b);
+	set_price(a, b);
+	set_cheapest(b);
 }

@@ -11,13 +11,13 @@
 
 typedef struct s_list
 {
-	int				position;
-	int				content;
-	int				under_mediane;
-	int				price;
-	int				target;
+	long int				position;
+	long int				content;
+	long int				under_mediane;
+	long int				price;
+	long int				target;
 
-	// struct s_list	*target;
+	//struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
 
@@ -51,6 +51,7 @@ void				set_target(t_list *a, t_list *b);
 int					isthesmallest(t_list *a);
 void				algopswp(t_list **a, t_list **b);
 void				init(t_list *a, t_list *b);
+void 				set_price(t_list *a, t_list *b);
 
 void				reverse_rotate_a(t_list **lst);
 void				reverse_rotate_b(t_list **lst);
