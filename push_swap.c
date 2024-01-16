@@ -6,7 +6,7 @@
 /*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/16 23:23:25 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/16 23:46:50 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int	main(int argc, char **argv)
 	ft_stock(argc, argv, &a);
 	algopswp(&a, &b);
 	init(a, b);
-	printf ("-------------------------------------\n");
-	printf("a\n");
-	printf ("-------------------------------------\n");
+	printf ("|------------------------------------|\n");
+	printf("                    A                  \n");
+	printf ("|------------------------------------|\n");
 	while (a)
 	{
 		if (a)
@@ -71,8 +71,8 @@ int	main(int argc, char **argv)
 			a = a->next;
 		}
 	}
-	printf("b\n");
-	printf ("-------------------------------------\n");
+	printf("                             B                              \n");
+	printf ("|---------------------------------------------------------|\n");
 	while (b->next)
 	{
 		if (b)
