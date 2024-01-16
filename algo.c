@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/15 16:41:21 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/16 23:17:19 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void algopswp(t_list **a, t_list **b)
 {
 	while (lst_size(*a) >= 3)
 			push_b(a, b);
-	// ft_algo3(a);
+	ft_algo3(a);
 }

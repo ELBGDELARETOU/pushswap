@@ -6,7 +6,7 @@
 /*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/16 17:37:40 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/16 23:23:25 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	}
 	printf("b\n");
 	printf ("-------------------------------------\n");
-	while (b->content)
+	while (b->next)
 	{
 		if (b)
 		{

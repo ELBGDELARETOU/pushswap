@@ -37,6 +37,8 @@ void	set_target(t_list *a, t_list *b)
                 current_b->target = current_a->content;
 			current_a = current_a->next;
 		}
+		if ((current_b->target == INT_MAX) && current_b->content == isthebiggest(current_b))
+				current_b->target = isthesmallest(a);
 		b = b->next;
 		if (current_a)
 			a = a->next;
