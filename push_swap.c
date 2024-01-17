@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/17 16:19:15 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:33:22 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,9 @@ int	main(int argc, char **argv)
 			printf("mediane : %ld ", b->under_mediane);
 			printf("position : %ld ", b->position);
 			printf("target : %ld ", b->target->content);
-			printf("price : %ld", b->price);
+			printf("price : %ld ", b->price);
+			printf("cheapest : %ld", b->cheapest);
+			
 			b = b->next;
 			printf("\n");
 		}

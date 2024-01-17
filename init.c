@@ -21,33 +21,6 @@ void	set_position(t_list *a)
 	}
 }
 
-// void	set_target(t_list *a, t_list *b)
-// {
-// 	t_list	*current_b;
-// 	t_list	*current_a;
-
-// 	while (b)
-// 	{
-//         current_b = b;
-// 		current_a = a;
-//         b->target = INT_MAX;
-// 		while (current_a)
-// 		{
-//             if (current_a->content > current_b->content
-//	&& current_a->content < current_b->target)
-//                 current_b->target = current_a->content;
-// 			current_a = current_a->next;
-// 		}
-// 		if ((current_b->target == INT_MAX)
-//
-//			&& current_b->content == isthebiggest(current_b))
-// 				current_b->target = isthesmallest(a);
-// 		b = b->next;
-// 		if (current_a)
-// 			a = a->next;
-// 	}
-// }
-
 void	set_target(t_list *a, t_list *b)
 {
 	t_list		*current_a;
@@ -67,6 +40,7 @@ void	set_target(t_list *a, t_list *b)
 			}
 			current_a = current_a->next;
 		}
+		printf("%ld\n", target_node->content);
 		if (target_node->content == INT_MAX)
 			b->target = smallestnode(a);
 		else
@@ -99,19 +73,26 @@ void	set_price(t_list *a, t_list *b)
 	}
 }
 
-// void	set_cheapest(t_list *a, t_list *b)
-// {
-// 	t_list	*cheapest;
+void	set_cheapest(t_list *a, t_list *b)
+{
+	t_list *cheapest;
+	long int cost;
 
-// 	while (b)
-// 	{
-// 	}
-// }
+	cost = INT_MIN;
+	while (b)
+	{
+		// printf("%ld\n", b->target->price);
+		if (cost < b->price + b->target->price)
+			cheapest = b;
+		b = b->next;
+	}
+	cheapest->content = 1;	
+}
 void	init(t_list *a, t_list *b)
 {
 	set_position(a);
 	set_position(b);
 	set_target(a, b);
 	set_price(a, b);
-	// set_cheapest(b);
+	set_cheapest(a, b);
 }

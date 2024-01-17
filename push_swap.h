@@ -15,6 +15,7 @@ typedef struct s_list
 	long int		content;
 	long int		under_mediane;
 	long int		price;
+	long int		cheapest;
 
 	struct s_list	*target;
 	struct s_list	*next;
@@ -55,6 +56,7 @@ t_list				*smallestnode(t_list *a);
 t_list				*bigestnode(t_list *a);
 void				rrr(t_list **a, t_list **b);
 void				rr(t_list **a, t_list **b);
+void				set_cheapest(t_list *a, t_list *b);
 
 void				reverse_rotate_a(t_list **lst);
 void				reverse_rotate_b(t_list **lst);

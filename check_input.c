@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:39:54 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/27 16:32:04 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:25:25 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,3 @@ int	ft_check(int argc, char **argv)
 	else
 		return (1);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	char **r;
-// 	int i = 0;
-// 	if (argc == 10000)
-// 		return (0);
-// 	ft_check(argc, argv);
-// 	return (0);
-// }
