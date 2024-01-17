@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:45 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/15 12:41:02 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:20:07 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,10 @@ void	rotate_a(t_list **lst)
 	current->next = *lst;
 	*lst = (*lst)->next;
 	current->next->next = NULL;
+}
+
+void	rr(t_list **a, t_list **b)
+{
+	rotate_a(a);
+	rotate_b(b);
 }

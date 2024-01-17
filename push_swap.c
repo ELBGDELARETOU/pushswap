@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/16 23:46:50 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/17 16:19:15 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int	main(int argc, char **argv)
 	ft_stock(argc, argv, &a);
 	algopswp(&a, &b);
 	init(a, b);
-	printf ("|------------------------------------|\n");
-	printf("                    A                  \n");
-	printf ("|------------------------------------|\n");
+	printf ("|----------------------------------------------|\n");
+	printf("                         A                       \n");
+	printf ("|----------------------------------------------|\n");
 	while (a)
 	{
 		if (a)
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 			printf("content : %ld ", a->content);
 			printf("mediane : %ld ", a->under_mediane);
 			printf("position : %ld ", a->position);
-			//printf("price : %d", a->price);
+			printf("price : %ld", a->price);
 			printf("\n");
 			a = a->next;
 		}
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 			printf("content : %ld ", b->content);
 			printf("mediane : %ld ", b->under_mediane);
 			printf("position : %ld ", b->position);
-			printf("target : %ld ", b->target);
+			printf("target : %ld ", b->target->content);
 			printf("price : %ld", b->price);
 			b = b->next;
 			printf("\n");

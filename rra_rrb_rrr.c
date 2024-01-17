@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:49 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/26 14:28:45 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:20:11 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,10 @@ void	reverse_rotate_b(t_list **lst)
 	tmp->next = NULL;
 	stock->next = *lst;
 	*lst = stock;
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	reverse_rotate_a(a);
+	reverse_rotate_b(b);
 }
