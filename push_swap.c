@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/18 17:33:01 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/18 23:17:51 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,11 @@ int	main(int argc, char **argv)
 	if (!ft_check(argc, argv))
 		return (0);
 	ft_stock(argc, argv, &a);
-	algopswp(&a, &b);
-	init(a, b);
+	while (*b)
+	{
+		intit(*a, *b);
+		top_it(a, b);
+	}
 	printf ("|----------------------------------------------|\n");
 	printf("                         A                       \n");
 	printf ("|----------------------------------------------|\n");

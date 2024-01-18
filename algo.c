@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/17 16:08:05 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/18 23:33:49 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,17 @@ void algopswp(t_list **a, t_list **b)
 			push_b(a, b);
 	ft_algo3(a);
 }
-// void	sort(t_list **a, t_list **b)
-// {
-// 	t_list *cheapest_node;
-	
-// 	if (cheapest_node->under_mediane == 1 && cheapest_node->target->under_mediane == 1)
-// 		rr(*a, *b);
-// 	if (cheapest_node->under_mediane == 0 && cheapest_node->target->under_mediane == 0)
-// 		rrr(*a, *b);
-// 	top_it();
-// }
 
-// void	top_it(t_list **node, t_list **target_node, char c)
-// {
-// 	while(node)
-// 	{
-// 		if(target_node->position != 0)
-// 			rotate_a(target_node);
-// 		if (node->position != 0 && node->mediane == 1)
-// 			rotate_b(node);
-// 		if (node->position != 0 && node->mediane == 0)
-// 			reverse_rotate_b(node);
-// 	}
-// }
+void	top_it(t_list **a, t_list **b)
+{
+	t_list *cheapest;
+	
+	cheapeest = cheapest_node(*b)
+	if(cheapest->mediane == 1 && cheapest->target_node->mediane == 1)
+ 		rr(a, b);
+	if(cheapest->mediane == 0 && cheapest->target_node->mediane == 0)
+ 		rrr(a, b);
+	finish(b);
+	finish(a);
+	pa(a, b);
+}

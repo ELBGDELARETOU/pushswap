@@ -72,23 +72,42 @@ void	set_price(t_list *a, t_list *b)
 	}
 }
 
-void	set_cheapest(t_list *a, t_list *b)
-{
-	t_list		*cheapest;
-	long int	cost;
+//void	set_cheapest(t_list *a, t_list *b)
+//{
+//	t_list		*cheapest;
+//	long int	cost;
+//
+//	cost = INT_MAX;
+//	while (b)
+//	{
+//		if (cost > b->price + b->target->price)
+//		{
+//			cost = b->price + b->target->price;
+//			cheapest = b;
+//		}
+//		b = b->next;
+//	}
+//	cheapest->cheapest = 1;
+//}
 
-	cost = INT_MAX;
+void set_cheapest(t_list *a, t_list *b) 
+{
+    t_list *cheapest;
+    long int cost = LONG_MAX;
+
 	while (b)
 	{
-		if (cost > b->price + b->target->price)
+		if (b->price < cost)
 		{
-			cost = b->price + b->target->price;
+			cost = b->price;
 			cheapest = b;
 		}
 		b = b->next;
 	}
 	cheapest->cheapest = 1;
+
 }
+
 void	init(t_list *a, t_list *b)
 {
 	set_position(a);
