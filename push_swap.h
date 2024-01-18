@@ -17,6 +17,7 @@ typedef struct s_list
 	long int		price;
 	long int		cheapest;
 
+	// struct s_list	*cheapest;
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;

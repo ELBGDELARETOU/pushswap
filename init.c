@@ -77,18 +77,17 @@ void	set_cheapest(t_list *a, t_list *b)
 	t_list		*cheapest;
 	long int	cost;
 
-	cost = INT_MIN;
+	cost = INT_MAX;
 	while (b)
 	{
-		if (cost < b->price + b->target->price)
+		if (cost > b->price + b->target->price)
 		{
 			cost = b->price + b->target->price;
 			cheapest = b;
 		}
 		b = b->next;
 	}
-	printf("popo : %ld\n", cheapest->content);
-	cheapest->content = 1;
+	cheapest->cheapest = 1;
 }
 void	init(t_list *a, t_list *b)
 {
