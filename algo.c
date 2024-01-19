@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/19 22:50:12 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/19 23:11:51 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_algo3(t_list **a)
 
 void	algopswp(t_list **a, t_list **b)
 {
+	if (!b)
+		return ;
 	while (lst_size(*a) >= 3)
 		push_b(a, b);
 	ft_algo3(a);
@@ -51,8 +53,10 @@ void	finish(t_list **a, t_list *top)
 
 void	top_it(t_list **a, t_list **b)
 {
-	t_list *cheapest;
+	t_list	*cheapest;
 
+	if (!b)
+		return ;
 	cheapest = cheapest_node(*b);
 	if (cheapest->under_mediane == 1 && cheapest->target->under_mediane == 1
 		&& cheapest->position != 0)
@@ -61,8 +65,8 @@ void	top_it(t_list **a, t_list **b)
 		set_position(*a);
 		set_position(*b);
 	}
-	else if (cheapest->under_mediane == 0 && cheapest->target->under_mediane == 0
-		&& cheapest->position != 0)
+	else if (cheapest->under_mediane == 0
+		&& cheapest->target->under_mediane == 0 && cheapest->position != 0)
 	{
 		rrr(a, b);
 		set_position(*a);

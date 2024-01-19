@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/19 22:39:42 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/19 23:16:49 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@ void	push_swap(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 
+	if (!ft_check(argc, argv))
+		return ;
 	b = malloc(sizeof(t_list));
 	if (!b || argc == 1)
 		return ;
+	b = NULL;
 	ft_stock(argc, argv, &a);
 	algopswp(&a, &b);
 	while (b)

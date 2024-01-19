@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:49 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/19 23:01:13 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/19 23:08:51 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse_rotate_a(t_list **lst, int rrr)
 	stock = NULL;
 	if (!*lst || !(*lst)->next)
 		return ;
-	if (rrr == '1')
+	if (rrr == 1)
 		write(1, "rrr\n", 4);
 	else
 		write(1, "rra\n", 4);
@@ -41,7 +41,7 @@ void	reverse_rotate_b(t_list **lst, int rrr)
 	stock = NULL;
 	if (!*lst || !(*lst)->next)
 		return ;
-	if (rrr == '0')
+	if (rrr == 0)
 		write(1, "rrb\n", 4);
 	tmp = *lst;
 	while (tmp->next->next)
