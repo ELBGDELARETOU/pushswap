@@ -58,9 +58,12 @@ t_list				*bigestnode(t_list *a);
 void				rrr(t_list **a, t_list **b);
 void				rr(t_list **a, t_list **b);
 void				set_cheapest(t_list *a, t_list *b);
+void				finish(t_list **a, t_list *top);
+void				top_it(t_list **a, t_list **b);
+t_list				*cheapest_node(t_list *b);
 
-void				reverse_rotate_a(t_list **lst);
-void				reverse_rotate_b(t_list **lst);
+void				reverse_rotate_a(t_list **lst, int rrr);
+void				reverse_rotate_b(t_list **lst, int rrr);
 
 void				rotate_a(t_list **lst);
 void				rotate_b(t_list **lst);

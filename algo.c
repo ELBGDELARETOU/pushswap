@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/18 23:33:49 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/19 22:50:12 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,49 @@ void	ft_algo3(t_list **a)
 	if ((*a)->content == isthebiggest(*a))
 		rotate_a(a);
 	else if ((*a)->next->content == isthebiggest(*a))
-		reverse_rotate_a(a);
+		reverse_rotate_a(a, 0);
 	if ((*a)->content > (*a)->next->content)
 		swap_a(a);
 }
 
-void algopswp(t_list **a, t_list **b)
+void	algopswp(t_list **a, t_list **b)
 {
 	while (lst_size(*a) >= 3)
-			push_b(a, b);
+		push_b(a, b);
 	ft_algo3(a);
+}
+
+void	finish(t_list **a, t_list *top)
+{
+	while (*a != top)
+	{
+		if (top->under_mediane == 1)
+			rotate_a(a);
+		else
+			reverse_rotate_a(a, 0);
+	}
 }
 
 void	top_it(t_list **a, t_list **b)
 {
 	t_list *cheapest;
-	
-	cheapeest = cheapest_node(*b)
-	if(cheapest->mediane == 1 && cheapest->target_node->mediane == 1)
- 		rr(a, b);
-	if(cheapest->mediane == 0 && cheapest->target_node->mediane == 0)
- 		rrr(a, b);
-	finish(b);
-	finish(a);
-	pa(a, b);
+
+	cheapest = cheapest_node(*b);
+	if (cheapest->under_mediane == 1 && cheapest->target->under_mediane == 1
+		&& cheapest->position != 0)
+	{
+		rr(a, b);
+		set_position(*a);
+		set_position(*b);
+	}
+	else if (cheapest->under_mediane == 0 && cheapest->target->under_mediane == 0
+		&& cheapest->position != 0)
+	{
+		rrr(a, b);
+		set_position(*a);
+		set_position(*b);
+	}
+	finish(b, cheapest);
+	finish(a, cheapest->target);
+	push_a(a, b);
 }

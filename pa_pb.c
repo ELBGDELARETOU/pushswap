@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:17:53 by anaouali          #+#    #+#             */
-/*   Updated: 2023/12/27 18:20:50 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:44:30 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_b(t_list **a, t_list **b)
 	tmp = malloc(sizeof(t_list));
 	if (!tmp)
 		return ;
-	write(1, "pa\n", 3);
+	write(1, "pb\n", 3);
 	tmp->content = (*a)->content;
 	tmp->next = *b;
 	*a = (*a)->next;
