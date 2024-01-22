@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:11:45 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/17 16:07:05 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:52:24 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	check_end(t_list *a, t_list *b)
 }
 int	lst_size(t_list *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (a->next)
@@ -48,7 +48,7 @@ int	lst_size(t_list *a)
 
 int	isthebiggest(t_list *a)
 {
-	int c;
+	int	c;
 
 	c = a->content;
 	while (a->next)
@@ -58,12 +58,12 @@ int	isthebiggest(t_list *a)
 		else
 			a = a->next;
 	}
-	return c;
+	return (c);
 }
 
-int		isthesmallest(t_list *a)
+int	isthesmallest(t_list *a)
 {
-	int c;
+	int	c;
 
 	c = a->content;
 	while (a->next)
@@ -73,5 +73,5 @@ int		isthesmallest(t_list *a)
 		else
 			a = a->next;
 	}
-	return c;
+	return (c);
 }

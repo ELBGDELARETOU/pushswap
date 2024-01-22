@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:10:19 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/18 23:26:42 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/22 15:52:28 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*bigestnode(t_list *a)
 
 t_list	*smallestnode(t_list *a)
 {
-	t_list *c;
+	t_list	*c;
 
 	c = a;
 	while (a->next)
@@ -50,4 +50,15 @@ t_list	*cheapest_node(t_list *b)
 		b = b->next;
 	}
 	return (NULL);
+}
+
+int	sorted(t_list *a)
+{
+	while (a->next)
+	{
+		if (!(a->content < a->next->content))
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

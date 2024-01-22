@@ -48,27 +48,46 @@ void	set_target(t_list *a, t_list *b)
 	}
 }
 
+// void	set_price(t_list *a, t_list *b)
+// {
+// 	long int	i;
+
+// 	i = 0;
+// 	while (b)
+// 	{
+// 		if (b->under_mediane == 1)
+// 			b->price = (i++);
+// 		if (b->under_mediane == 0)
+// 			b->price = (--i);
+// 		b = b->next;
+// 	}
+// 	i = 0;
+// 	while (a)
+// 	{
+// 		if (a->under_mediane == 1)
+// 			a->price = (i++);
+// 		if (a->under_mediane == 0)
+// 			a->price = (--i);
+// 		a = a->next;
+// 	}
+// }
 void	set_price(t_list *a, t_list *b)
 {
-	long int	i;
+	int	len_a;
+	int	len_b;
 
-	i = 0;
+	len_a = lst_size(a);
+	len_b = lst_size(b);
 	while (b)
 	{
-		if (b->under_mediane == 1)
-			b->price = (i++);
-		if (b->under_mediane == 0)
-			b->price = (--i);
+		b->price = b->position;
+		if (!(b->under_mediane == 1))
+			b->price = len_b - (b->position);
+		if (b->target->under_mediane == 1)
+			b->price += b->target->position;
+		else
+			b->price += len_a - (b->target->position);
 		b = b->next;
-	}
-	i = 0;
-	while (a)
-	{
-		if (a->under_mediane == 1)
-			a->price = (i++);
-		if (a->under_mediane == 0)
-			a->price = (--i);
-		a = a->next;
 	}
 }
 
