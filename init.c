@@ -48,29 +48,6 @@ void	set_target(t_list *a, t_list *b)
 	}
 }
 
-// void	set_price(t_list *a, t_list *b)
-// {
-// 	long int	i;
-
-// 	i = 0;
-// 	while (b)
-// 	{
-// 		if (b->under_mediane == 1)
-// 			b->price = (i++);
-// 		if (b->under_mediane == 0)
-// 			b->price = (--i);
-// 		b = b->next;
-// 	}
-// 	i = 0;
-// 	while (a)
-// 	{
-// 		if (a->under_mediane == 1)
-// 			a->price = (i++);
-// 		if (a->under_mediane == 0)
-// 			a->price = (--i);
-// 		a = a->next;
-// 	}
-// }
 void	set_price(t_list *a, t_list *b)
 {
 	int	len_a;

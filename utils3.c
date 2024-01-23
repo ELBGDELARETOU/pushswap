@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:10:19 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 15:52:28 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:02:15 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,10 @@ int	sorted(t_list *a)
 {
 	while (a->next)
 	{
-		if (!(a->content < a->next->content))
+		if (a->content < a->next->content)
+			a = a->next;
+		else
 			return (0);
-		a = a->next;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:39:39 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 15:52:34 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:41:12 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,4 @@ int	tl(char **str)
 	while (str[i])
 		i++;
 	return (i);
-}
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	ft_lstlast(*lst)->next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:29:04 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/19 17:05:14 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:10:59 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,6 @@ int	main(int argc, char **argv)
 		}
 	}
 }
+
+INT_MAX
+INT_MIN

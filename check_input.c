@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:39:54 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 15:53:10 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:58:45 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_check_letters(int argc, char **argv, int check)
 		i++;
 	while (argc > i)
 	{
-		if (!(ft_atoi(argv[i]) > -2147483648 && ft_atoi(argv[i]) < 2147483647))
+		if (!(ft_atoi(argv[i]) >= -2147483647 && ft_atoi(argv[i]) <= 2147483647))
 			return (0);
 		else if (!ft_isalpha(argv[i]))
 			return (0);

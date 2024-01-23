@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 17:01:46 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:50:06 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ void	ft_stock(int argc, char **argv, t_list **list)
 	}
 }
 
-void	push_swap(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
 
-	if (!ft_check(argc, argv))
-		return ;
-	b = malloc(sizeof(t_list));
-	if (!b || argc == 1)
-		return ;
-	b = NULL;
+	if (argc == 1 || (!ft_check(argc, argv)))
+		return (0);
 	ft_stock(argc, argv, &a);
-	algopswp(&a, &b);
+	if (sorted(a))
+		return (0);
+	while (lst_size(a) >= 3)
+		push_b(&a, &b);
+	ft_algo3(&a);
 	while (b)
 	{
 		init(a, b);
@@ -63,63 +63,25 @@ void	push_swap(int argc, char **argv)
 	while (b->position != 0)
 	{
 		if (b->under_mediane == 1)
-			rotate_a(&a, 0);
-		else 
-			reverse_rotate_a(&a, 0);
+			rotate(&a, 0);
+		else
+			reverse_rotate(&a, 0);
 		set_position(a);
 	}
+	printf("|----------------------------------------------|\n");
+	printf("                         A                       \n");
+	printf("|----------------------------------------------|\n");
+	while (a)
+	{
+		if (a)
+		{
+			printf("content : %ld ", a->content);
+			printf("mediane : %ld ", a->under_mediane);
+			printf("position : %ld ", a->position);
+			printf("price : %ld", a->price);
+			printf("\n");
+			a = a->next;
+		}
+	}
+	return (0);
 }
-
-int	main(int argc, char **argv)
-{
-	push_swap(argc, argv);
-}
-
-// int	main(int argc, char **argv)
-// {
-// 	t_list *a;
-// 	t_list *b;
-
-// 	b = malloc(sizeof(t_list));
-// 	if (!b)
-// 		return (0);
-// 	if (argc == 1)
-// 		return (0);
-// 	if (!ft_check(argc, argv))
-// 		return (0);
-// 	ft_stock(argc, argv, &a);
-// 	algopswp(&a, &b);
-// 	init(a, b);
-// 	printf("|----------------------------------------------|\n");
-// 	printf("                         A                       \n");
-// 	printf("|----------------------------------------------|\n");
-// 	while (a)
-// 	{
-// 		if (a)
-// 		{
-// 			printf("content : %ld ", a->content);
-// 			printf("mediane : %ld ", a->under_mediane);
-// 			printf("position : %ld ", a->position);
-// 			printf("price : %ld", a->price);
-// 			printf("\n");
-// 			a = a->next;
-// 		}
-// 	}
-// 	printf("                                  B                                    \n");
-// 	printf("|--------------------------------------------------------------------|\n");
-// 	while (b->next)
-// 	{
-// 		if (b)
-// 		{
-// 			printf("content : %ld ", b->content);
-// 			printf("mediane : %ld ", b->under_mediane);
-// 			printf("position : %ld ", b->position);
-// 			// printf("target : %ld ", b->target->content);
-// 			printf("price : %ld ", b->price);
-// 			printf("cheapest : %ld", b->cheapest);
-
-// 			b = b->next;
-// 			printf("\n");
-// 		}
-// 	}
-// }

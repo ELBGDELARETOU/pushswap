@@ -6,20 +6,12 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:11:45 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 15:52:24 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:43:32 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
-{
-	if (!lst)
-		return (0);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
-}
 int	check_end(t_list *a, t_list *b)
 {
 	if (b)

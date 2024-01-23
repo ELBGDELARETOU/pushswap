@@ -17,7 +17,6 @@ typedef struct s_list
 	long int		price;
 	long int		cheapest;
 
-	// struct s_list	*cheapest;
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -50,7 +49,6 @@ int					isthebiggest(t_list *a);
 void				set_position(t_list *a);
 void				set_target(t_list *a, t_list *b);
 int					isthesmallest(t_list *a);
-void				algopswp(t_list **a, t_list **b);
 void				init(t_list *a, t_list *b);
 void				set_price(t_list *a, t_list *b);
 t_list				*smallestnode(t_list *a);
@@ -64,15 +62,10 @@ void				top_it(t_list **a, t_list **b);
 t_list				*cheapest_node(t_list *b);
 int					sorted(t_list *a);
 
-void				reverse_rotate_a(t_list **lst, int rrr);
-void				reverse_rotate_b(t_list **lst, int rrr);
 
-void				rotate_a(t_list **lst, int rr);
-void				rotate_b(t_list **lst, int rr);
-
-void				swap_a(t_list **a);
-void				swap_b(t_list **a);
-
+void				reverse_rotate(t_list **lst, int rrr);
+void				rotate(t_list **lst, int rr);
+void				swap(t_list **a, int swap);
 void				push_a(t_list **a, t_list **b);
 void				push_b(t_list **a, t_list **b);
 
