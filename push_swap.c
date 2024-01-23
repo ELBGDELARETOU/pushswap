@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/23 17:50:06 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/24 00:58:17 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,43 @@ void	ft_stock(int argc, char **argv, t_list **list)
 		i++;
 	}
 }
+void	stock_one(char **argv, t_list **a)
+{
+	t_list *new;
+	t_list *next = NULL;
+    char **split;
+	int	i;
+	
+	i = 0;
+	split = ft_split(argv[1], ' ');
+    while (split[i] != NULL)
+    {
+		new = malloc(sizeof(t_list));
+    	if (!new)
+			return ;
+		new->content = ft_atoi(split[i]);
+    	new->next = NULL;
+		if (*a == NULL)
+    		*a = new;
+		else 
+			next->next = new;
+			next = new;
+		i++;
+    }
+	return ;
+}
 
 int	main(int argc, char **argv)
 {
-	t_list	*a;
-	t_list	*b;
+	t_list	*a = NULL;
+	t_list	*b = NULL;
 
 	if (argc == 1 || (!ft_check(argc, argv)))
 		return (0);
-	ft_stock(argc, argv, &a);
+	if (argc == 2)
+		stock_one(argv, &a);
+	else 
+	 	ft_stock(argc, argv, &a);
 	if (sorted(a))
 		return (0);
 	while (lst_size(a) >= 3)
@@ -67,21 +95,6 @@ int	main(int argc, char **argv)
 		else
 			reverse_rotate(&a, 0);
 		set_position(a);
-	}
-	printf("|----------------------------------------------|\n");
-	printf("                         A                       \n");
-	printf("|----------------------------------------------|\n");
-	while (a)
-	{
-		if (a)
-		{
-			printf("content : %ld ", a->content);
-			printf("mediane : %ld ", a->under_mediane);
-			printf("position : %ld ", a->position);
-			printf("price : %ld", a->price);
-			printf("\n");
-			a = a->next;
-		}
 	}
 	return (0);
 }
