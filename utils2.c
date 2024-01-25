@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:11:45 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/23 15:43:32 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:27:23 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	check_end(t_list *a, t_list *b)
 	}
 	return (1);
 }
+
 int	lst_size(t_list *a)
 {
 	int	i;

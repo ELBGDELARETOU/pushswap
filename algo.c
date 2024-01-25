@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/23 12:38:44 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:29:33 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_algo2(t_list **a, t_list **b)
 	}
 	return ;
 }
+
 void	ft_algo3(t_list **a)
 {
 	if ((*a)->content == isthebiggest(*a))
@@ -41,6 +42,7 @@ void	finish_a(t_list **a, t_list *top)
 			reverse_rotate(a, 0);
 	}
 }
+
 void	finish_b(t_list **b, t_list *top)
 {
 	while (*b != top)

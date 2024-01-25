@@ -6,13 +6,13 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:35:12 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/22 15:53:08 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:04:31 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	my_free_all(char **res, int len)
+void	my_free_all(char **res, int len)
 {
 	int	i;
 

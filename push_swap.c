@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/24 00:58:17 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/25 13:15:11 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_lst(t_list *a)
+{
+	t_list	*tmp;
+
+	while (a)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+}
 
 void	ft_stock(int argc, char **argv, t_list **list)
 {
@@ -40,53 +52,71 @@ void	ft_stock(int argc, char **argv, t_list **list)
 		i++;
 	}
 }
+
 void	stock_one(char **argv, t_list **a)
 {
-	t_list *new;
-	t_list *next = NULL;
-    char **split;
-	int	i;
-	
+	t_list	*new;
+	t_list	*next;
+	char	**split;
+	int		i;
+
+	next = NULL;
 	i = 0;
 	split = ft_split(argv[1], ' ');
-    while (split[i] != NULL)
-    {
+	while (split[i] != NULL)
+	{
 		new = malloc(sizeof(t_list));
-    	if (!new)
+		if (!new)
 			return ;
 		new->content = ft_atoi(split[i]);
-    	new->next = NULL;
+		new->next = NULL;
 		if (*a == NULL)
-    		*a = new;
-		else 
+			*a = new;
+		else
 			next->next = new;
-			next = new;
+		next = new;
 		i++;
-    }
+	}
+	my_free_all(split, str_size(split));
 	return ;
 }
 
-int	main(int argc, char **argv)
+int	first_step(int argc, char **argv, t_list **a, t_list **b)
 {
-	t_list	*a = NULL;
-	t_list	*b = NULL;
+	char	**tmp;
 
 	if (argc == 1 || (!ft_check(argc, argv)))
 		return (0);
 	if (argc == 2)
-		stock_one(argv, &a);
-	else 
-	 	ft_stock(argc, argv, &a);
-	if (sorted(a))
+		stock_one(argv, a);
+	else
+		ft_stock(argc, argv, a);
+	if (sorted(*a))
+	{
+		free_lst(*a);
 		return (0);
-	while (lst_size(a) >= 3)
-		push_b(&a, &b);
-	ft_algo3(&a);
+	}
+	while (lst_size(*a) >= 3)
+		push_b(a, b);
+	ft_algo3(a);
+	return (1);
+}
+
+int	main(int argc, char **argv)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = NULL;
+	b = NULL;
+	if (!first_step(argc, argv, &a, &b))
+		return (0);
 	while (b)
 	{
 		init(a, b);
 		top_it(&a, &b);
 	}
+	set_position(a);
 	b = smallestnode(a);
 	while (b->position != 0)
 	{
@@ -96,5 +126,6 @@ int	main(int argc, char **argv)
 			reverse_rotate(&a, 0);
 		set_position(a);
 	}
+	free_lst(a);
 	return (0);
 }

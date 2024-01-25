@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/25 12:27:47 by anaouali          #+#    #+#             */
+/*   Updated: 2024/01/25 13:32:14 by anaouali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -25,14 +37,14 @@ typedef struct s_list
 
 long				ft_atoi(char *str);
 int					ft_check(int argc, char **argv);
-int					ft_check_doubles(int argc, char **argv, int check);
+int					ft_check_double(int argc, char **argv, int check);
 int					ft_isalpha(char *str);
-int					ft_check_letters(int argc, char **argv, int check);
+int					ft_check_letter(int argc, char **argv, int check);
 char				**ft_split(char const *str, char c);
 static char			*ft_get_next_words(int *index, char const *str, char c);
 static int			ft_count_words(char const *str, char c);
 static int			ft_char_is_in_str(char const *str, char c);
-static void			my_free_all(char **res, int len);
+void				my_free_all(char **res, int len);
 int					tl(char **str);
 int					ft_isaout(char *str);
 void				ft_stock(int argc, char **argv, t_list **list);
@@ -61,7 +73,10 @@ void				finish_b(t_list **a, t_list *top);
 void				top_it(t_list **a, t_list **b);
 t_list				*cheapest_node(t_list *b);
 int					sorted(t_list *a);
-
+int					str_size(char **str);
+int					first_step(int argc, char **argv, t_list **a, t_list **b);
+void				free_lst(t_list *a);
+int					ft_check_one_arg(int argc, char **argv);
 
 void				reverse_rotate(t_list **lst, int rrr);
 void				rotate(t_list **lst, int rr);
