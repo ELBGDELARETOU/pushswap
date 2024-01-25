@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 12:29:33 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:11:01 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	ft_algo2(t_list **a, t_list **b)
 {
 	while (!check_end(*a, *b))
-	{
 		if ((*a)->content > (*a)->next->content)
 			rotate(a, 0);
-	}
 	return ;
 }
 
@@ -67,8 +65,8 @@ void	top_it(t_list **a, t_list **b)
 		rr(a, b);
 		init(*a, *b);
 	}
-	while (cheapest->under_mediane == 0
-		&& cheapest->target->under_mediane == 0 && cheapest->position != 0)
+	while (cheapest->under_mediane == 0 && cheapest->target->under_mediane == 0
+		&& cheapest->position != 0)
 	{
 		rrr(a, b);
 		init(*a, *b);

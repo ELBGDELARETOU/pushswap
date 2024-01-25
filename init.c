@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:28:01 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 12:28:02 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:08:54 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	set_price(t_list *a, t_list *b)
 	while (b)
 	{
 		b->price = b->position;
-		if (!(b->under_mediane == 1))
+		if (b->under_mediane == 0)
 			b->price = len_b - (b->position);
 		if (b->target->under_mediane == 1)
 			b->price += b->target->position;
@@ -79,6 +79,15 @@ void	set_price(t_list *a, t_list *b)
 		b = b->next;
 	}
 }
+void setto_zero(t_list *b)
+{
+	while (b)
+	{
+		b->cheapest = 0;
+		b = b->next;
+	}
+	return ;
+}
 
 void	set_cheapest(t_list *a, t_list *b)
 {
@@ -86,6 +95,7 @@ void	set_cheapest(t_list *a, t_list *b)
 	long int	cost;
 
 	cost = LONG_MAX;
+	setto_zero(b);
 	while (b)
 	{
 		if (b->price < cost)
@@ -93,6 +103,8 @@ void	set_cheapest(t_list *a, t_list *b)
 			cost = b->price;
 			cheapest = b;
 		}
+		else
+			cheapest->cheapest = 0;
 		b = b->next;
 	}
 	cheapest->cheapest = 1;
