@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:39:39 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:12 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:45:39 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int	ft_isalpha(char *str)
 
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i+1] == '\0')
+			return (0);
 		i++;
+	}
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

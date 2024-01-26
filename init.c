@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:28:01 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 16:08:54 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:53:54 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,27 @@ void	set_price(t_list *a, t_list *b)
 	len_b = lst_size(b);
 	while (b)
 	{
-		b->price = b->position;
-		if (b->under_mediane == 0)
-			b->price = len_b - (b->position);
-		if (b->target->under_mediane == 1)
-			b->price += b->target->position;
+		if (b->under_mediane == 1 && b->target->under_mediane == 1)
+		{
+			if (b->position > b->target->position)
+				b->price = b->position;
+			else
+				b->price = b->target->position;
+		}
 		else
-			b->price += len_a - (b->target->position);
+		{
+			b->price = b->position;
+			if (b->under_mediane == 0)
+				b->price = (len_b) - (b->position);
+			if (b->target->under_mediane == 1)
+				b->price += b->target->position;
+			else
+				b->price += len_a - (b->target->position);
+		}
 		b = b->next;
 	}
 }
-void setto_zero(t_list *b)
+void	setto_zero(t_list *b)
 {
 	while (b)
 	{
@@ -103,8 +113,6 @@ void	set_cheapest(t_list *a, t_list *b)
 			cost = b->price;
 			cheapest = b;
 		}
-		else
-			cheapest->cheapest = 0;
 		b = b->next;
 	}
 	cheapest->cheapest = 1;
