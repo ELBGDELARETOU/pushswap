@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:28:01 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/26 17:53:54 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/28 01:31:29 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	set_price(t_list *a, t_list *b)
 			b->price = b->position;
 			if (b->under_mediane == 0)
 				b->price = (len_b) - (b->position);
+			if (b->under_mediane == 1)
+				b->price = b->position;
 			if (b->target->under_mediane == 1)
 				b->price += b->target->position;
 			else

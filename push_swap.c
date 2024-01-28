@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/26 18:43:49 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/28 00:19:42 by ademnaouali      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,38 +111,6 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (!first_step(argc, argv, &a, &b))
 		return (0);
-	// init(a, b);
-	// printf("|----------------------------------------------|\n");
-	// printf("                         A                       \n");
-	// printf("|----------------------------------------------|\n");
-	// while (a)
-	// {
-	// 	if (a)
-	// 	{
-	// 		printf("content : %ld ", a->content);
-	// 		printf("mediane : %ld ", a->under_mediane);
-	// 		printf("position : %ld ", a->position);
-	// 		printf("price : %ld", a->price);
-	// 		printf("\n");
-	// 		a = a->next;
-	// 	}
-	// }
-	// printf("                                  B                                    \n");
-	// printf("|--------------------------------------------------------------------|\n");
-	// while (b)
-	// {
-	// 	if (b)
-	// 	{
-	// 		printf("content : %ld ", b->content);
-	// 		printf("mediane : %ld ", b->under_mediane);
-	// 		// printf("position : %ld ", b->position);
-	// 		printf("price : %ld ", b->price);
-	// 		printf("cheapest : %ld", b->cheapest);
-
-	// 		b = b->next;
-	// 		printf("\n");
-	// 	}
-	// }
 	while (b)
 	{
 		init(a, b);
@@ -158,6 +126,21 @@ int	main(int argc, char **argv)
 			reverse_rotate(&a, 0);
 		set_position(a);
 	}
+	// printf("|----------------------------------------------|\n");
+	// printf("                         A                       \n");
+	// printf("|----------------------------------------------|\n");
+	// while (a)
+	// {
+	// 	if (a)
+	// 	{
+	// 		printf("content : %ld ", a->content);
+	// 		printf("mediane : %ld ", a->under_mediane);
+	// 		printf("position : %ld ", a->position);
+	// 		printf("price : %ld", a->price);
+	// 		printf("\n");
+	// 		a = a->next;
+	// 	}
+	// }
 	free_lst(a);
 	return (0);
 }
