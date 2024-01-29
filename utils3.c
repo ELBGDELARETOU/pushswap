@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:10:19 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 12:27:04 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:50:38 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ t_list	*cheapest_node(t_list *b)
 
 int	sorted(t_list *a)
 {
+	if (!a)
+		return (0);
 	while (a->next)
 	{
 		if (a->content < a->next->content)

@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:27:47 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 13:32:14 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:06:19 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ int					str_size(char **str);
 int					first_step(int argc, char **argv, t_list **a, t_list **b);
 void				free_lst(t_list *a);
 int					ft_check_one_arg(int argc, char **argv);
+void				ft_algo5(t_list **a, t_list **b);
+void				setto_zero(t_list *b);
+void				pricring(t_list *a, t_list *b, int len_a, int len_b);
+void				top_itbis(t_list **a, t_list **b, t_list *cheapest);
 
 void				reverse_rotate(t_list **lst, int rrr);
 void				rotate(t_list **lst, int rr);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 14:24:02 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/27 23:15:47 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/29 19:07:07 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ void	top_it(t_list **a, t_list **b)
 	if (!b)
 		return ;
 	cheapest = cheapest_node(*b);
+	top_itbis(a, b, cheapest);
 	while (cheapest->under_mediane == 1 && cheapest->target->under_mediane == 1
 		&& cheapest->position != 0)
 	{
 		rr(a, b);
 		init(*a, *b);
 	}
-	while (cheapest->under_mediane == 0 && cheapest->target->under_mediane == 0
+	while (cheapest->under_mediane == 2 && cheapest->target->under_mediane == 2
 		&& cheapest->position != 0)
 	{
 		rrr(a, b);

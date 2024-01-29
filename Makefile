@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = algo.c check_input.c ft_split.c init.c push_swap.c r_command.c s_p_command.c utils.c utils2.c utils3.c
+SRCS = algo.c check_input.c ft_split.c init.c push_swap.c r_command.c s_p_command.c utils.c utils2.c utils3.c utils4.c
 
 OBJS = ${SRCS:.c=.o}
 

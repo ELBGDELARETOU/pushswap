@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:28:01 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/28 01:31:29 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/29 19:01:11 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	set_position(t_list *a)
 		if (i <= mediane)
 			a->under_mediane = 1;
 		else
-			a->under_mediane = 0;
+			a->under_mediane = 2;
 		a = a->next;
 		i++;
 	}
@@ -69,6 +69,7 @@ void	set_price(t_list *a, t_list *b)
 	len_b = lst_size(b);
 	while (b)
 	{
+		b->price = b->position;
 		if (b->under_mediane == 1 && b->target->under_mediane == 1)
 		{
 			if (b->position > b->target->position)
@@ -77,28 +78,9 @@ void	set_price(t_list *a, t_list *b)
 				b->price = b->target->position;
 		}
 		else
-		{
-			b->price = b->position;
-			if (b->under_mediane == 0)
-				b->price = (len_b) - (b->position);
-			if (b->under_mediane == 1)
-				b->price = b->position;
-			if (b->target->under_mediane == 1)
-				b->price += b->target->position;
-			else
-				b->price += len_a - (b->target->position);
-		}
+			pricring(a, b, len_a, len_b);
 		b = b->next;
 	}
-}
-void	setto_zero(t_list *b)
-{
-	while (b)
-	{
-		b->cheapest = 0;
-		b = b->next;
-	}
-	return ;
 }
 
 void	set_cheapest(t_list *a, t_list *b)

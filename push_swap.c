@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademnaouali <ademnaouali@student.42.fr>    +#+  +:+       +#+        */
+/*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:19:29 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/28 00:19:42 by ademnaouali      ###   ########.fr       */
+/*   Updated: 2024/01/29 18:07:17 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	first_step(int argc, char **argv, t_list **a, t_list **b)
 		free_lst(*a);
 		return (0);
 	}
-	while (lst_size(*a) >= 3 || (!sorted(*a)))
+	while (lst_size(*a) >= 3 && (!sorted(*a)))
 		push_b(a, b);
 	ft_algo3(a);
 	return (1);
@@ -126,21 +126,6 @@ int	main(int argc, char **argv)
 			reverse_rotate(&a, 0);
 		set_position(a);
 	}
-	// printf("|----------------------------------------------|\n");
-	// printf("                         A                       \n");
-	// printf("|----------------------------------------------|\n");
-	// while (a)
-	// {
-	// 	if (a)
-	// 	{
-	// 		printf("content : %ld ", a->content);
-	// 		printf("mediane : %ld ", a->under_mediane);
-	// 		printf("position : %ld ", a->position);
-	// 		printf("price : %ld", a->price);
-	// 		printf("\n");
-	// 		a = a->next;
-	// 	}
-	// }
 	free_lst(a);
 	return (0);
 }
