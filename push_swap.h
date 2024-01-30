@@ -6,19 +6,15 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 12:27:47 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/29 19:06:19 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:16:44 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <fcntl.h>
 # include <limits.h>
-# include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -31,8 +27,6 @@ typedef struct s_list
 
 	struct s_list	*target;
 	struct s_list	*next;
-	struct s_list	*prev;
-
 }					t_list;
 
 long				ft_atoi(char *str);
@@ -81,6 +75,7 @@ void				ft_algo5(t_list **a, t_list **b);
 void				setto_zero(t_list *b);
 void				pricring(t_list *a, t_list *b, int len_a, int len_b);
 void				top_itbis(t_list **a, t_list **b, t_list *cheapest);
+int					ft_strlen(char *str);
 
 void				reverse_rotate(t_list **lst, int rrr);
 void				rotate(t_list **lst, int rr);

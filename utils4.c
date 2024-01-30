@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:58:46 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/29 19:21:06 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:27:21 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	top_itbis(t_list **a, t_list **b, t_list *cheapest)
 	}
 }
 
-// int check_overflow(char *str)
-// {
-//     if (str_size(str) > 11)
-//         if (ft_atoi(str) > 2147483647)
-//             return(0);
-//     return(1);
-// }
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i++])
+		;
+	return (i);
+}

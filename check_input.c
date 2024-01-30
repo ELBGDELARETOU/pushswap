@@ -6,7 +6,7 @@
 /*   By: anaouali <anaouali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:39:54 by anaouali          #+#    #+#             */
-/*   Updated: 2024/01/25 13:32:34 by anaouali         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:27:37 by anaouali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_check_double(int argc, char **argv, int check)
 	{
 		while (j < argc)
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]) || ft_strlen(argv[i]) > 12)
 				return (0);
 			j++;
 		}
@@ -48,7 +48,7 @@ int	ft_check_letter(int argc, char **argv, int check)
 		i++;
 	while (argc > i)
 	{
-		if (!(ft_atoi(argv[i]) >= -2147483647
+		if (!(ft_atoi(argv[i]) >= -2147483648
 				&& ft_atoi(argv[i]) <= 2147483647))
 			return (0);
 		else if (!ft_isalpha(argv[i]))
@@ -65,6 +65,14 @@ int	ft_check_one_arg(int argc, char **argv)
 	r = ft_split(argv[1], ' ');
 	if (str_size(r) == 2)
 	{
+		if (!ft_check_letter(tl(r), r, 1))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+	}
+	if (str_size(r) == 2)
+	{
 		my_free_all(r, str_size(r));
 		return (0);
 	}
@@ -79,8 +87,6 @@ int	ft_check_one_arg(int argc, char **argv)
 
 int	ft_check(int argc, char **argv)
 {
-	char	**r;
-
 	if (argc == 1)
 	{
 		write(2, "Error\n", 6);
